@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Scaler-Interviews</title>
+            <link rel="shortcut icon" href="./Images/1.ico" type="image/x-icon">
+        
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Styles/1.css">
+<link rel="stylesheet" href="Styles/2.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100&display=swap" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+    var app=angular.module("myapp",[]);
+   
+
+   app.controller("MyController2", function ($scope, $http) {
+   
+   
+   $scope.id = null;
+   $scope.userName=null;
+   $scope.email=null;
+   $scope.password = null;
+   
+   
+   $scope.lblMsg = null;
+   
+   $scope.putdata = function (email,password) {
+   
+   
+   
+  // alert(email);
+   //alert(password);
+   var data = {
+   email:email,
+   password:password
+   };
+   
+   //Call the services
+   
+   $http.get('http://localhost:8080/login/'+email+'/'+password, JSON.stringify(data)).then(function successCallback(response) {
+   
+  
+   
+   $scope.msg = "Post Data Method Executed Successfully!";
+  // alert("hello1");
+   var a=response.data.id;
+   //alert(a);
+  
+   if(response.data)
+   {alert("product id: "+a);
+   
+    if((response.data).id==150)
+        { 
+            alert("wrong password");
+        }
+        else{
+    window.location.href="http://localhost/own2/notebook.html?id="+a;
+}
+   }
+   else{
+       alert('no login access found or your user name is wrong ,please signup first or check your username');
+       window.location.href="http://localhost/own2/signup.html";
+   }
+   
+   }, function errorCallback(response) {
+   
+   $scope.msg = "Service not Exists";
+   
+   $scope.statusval = response.status;
+   
+   $scope.statustext = response.statusText;
+   alert(response);
+   
+   
+   });
+   
+   };
+   
+   });
+   
+   
+</script>
+</head>
+<div class="ab0">
+    <div id="loader">
+        <img id="loaderimg"src="./Images/1.png" />
+            </div>
+    </div>
+</div>
+</div>
+<body onload="myFunction()" ng-app="myapp">
+   
+<div id="myDiv" style="display:none;">
+<div class="topnav">
+    <img src="./Images/2.png" width="119" height="100">
+    <a href="./signup.html">Signup</a>
+    <a href="./login.html">Login</a>
+  <a href="./index.html">Home</a>
+</div>
+<h1 class="ab">
+   Scaler-Interviews
+</h1>
+<h2 class="ab2">
+    Enter into an another world of Recruitment
+</h2>
+</br>
+</br>
+
+<div class="abc">
+
+  
+    <label class="login" style="font-size:50px; font-family: 'Roboto Condensed', sans-serif; font-weight: bold;"></t></t>Login</label> 
+    <div class="container" ng-controller="MyController2">    
+        
+        <input type="text"  ng-model="email" placeholder="Enter User id" name="username" required style="font-family: 'Anek Devanagari', sans-serif; ; font-weight: bold; border-radius: 10px; ">  
+       
+        <input type="password" ng-model="password" placeholder="Enter Password" name="password" required style="font-family: 'Anek Devanagari', sans-serif; font-weight: bold;border-radius: 10px;;" >  
+        <button type="submit" ng-click="putdata(email,password)" style="font-family: 'Anek Devanagari', sans-serif;  font-weight: bold; color:white; font-size:30px;">Login</button>     
+    </div> 
+
+
+</div>     
+<div class="ab6">
+</br>
+    <h2 class="ab7">contact us</h2>
+     <h2 class="ab8">Team Scaler-Interviews </br> 9th Floor Sakti Statesman Building Iblur</br> Karnataka India</h2></br>
+</div>
+
+
+</body>
+<script type="text/javascript">
+    var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+</html>

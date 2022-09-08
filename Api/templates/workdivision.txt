@@ -1,0 +1,14 @@
+ till tomorow 2o'clock
+    1. add the upload feature - done
+    2.call the api and get the data 
+    3. edit and view datax
+    4. Make the spa tomorrow for all the page first
+    
+    after 2 
+    1. add the feature of adding the meeting link generation
+    2. make the api for user table for admin and other part
+    3. add the user portal for students where he can see the interview time and link and also upload resume
+
+    on 7th 
+    1. merge the new features using connection between frontend and backend
+    2. after adding it, just host it on any platform for checking

@@ -1,0 +1,152 @@
+
+#loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:  #946c4b;
+    display:flex;
+    justify-content: center;
+    align-items: center;    
+  }
+  .loaderimg{
+    height : 120px;
+    width : 120px;
+    animation: spinlogo 2s linear infinite;
+    align-items: center;
+}
+  
+@keyframes spinloader {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes spinlogo {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+  
+  
+  #myDiv {
+    display: none;
+    
+  }
+  .ab0{
+      background-color:#946c4b;
+  }
+.topnav {
+    background-color: white;
+    overflow: hidden;
+    margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: right;
+    color: black;
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 21px;
+    background-color: white;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    color: #946c4b;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: white;
+    color: white;
+  }
+  .ab{
+      text-align: center;
+      font-size:110px;
+  }
+  .ab:hover{
+      color:#946c4b;
+  }
+  .ab2{
+      text-align:center;
+      font-size:44px;
+      font-family: 'Noto Sans', sans-serif;
+  }
+
+  .image-grid{
+      --gap:16px;
+      --nums-cols:3;
+      --row-height:300px;
+      box-sizing: border-box;
+      padding:var(--gap);
+
+      display:grid;
+      grid-template-columns: repeat(var(--num-cols),1fr);
+      grid-auto-rows:var(--row-height);
+      gap:var(--gap);
+  }
+  .image-grid > img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+  }
+  .image-grid-col-2
+  {
+      grid-column: span 2;
+
+  }
+  .image-grid-row-2
+  {
+      grid-row: span 2;
+      
+  }
+  @media screen and (max-width:1024px) {
+      .image-grid{
+          --num-cols:2;
+          --row-height:400px;
+      }
+      
+  }
+
+ .ab3 
+ {
+     background-color: #F7F5F2;
+ } 
+ .ab4
+ {font-family: 'Roboto', sans-serif;
+    font-size:60px;
+    text-align:center;
+ }
+ .ab5
+ {  text-align:center;
+    font-size:30px;
+        
+    font-weight: 100;
+ }
+.ab6{
+    background-color:black;
+}
+.ab7{
+    color:white;
+    text-align: center;
+      font-size:60px;
+      font-family: 'Noto Sans', sans-serif;
+}
+.ab7:hover{
+    color: #946c4b;
+}
+.ab8{
+    color:white;
+    text-align: center;
+    font-size:22px;
+    font-family: 'Noto Sans', sans-serif;
+}
+.ab4:hover
+    {color:#946c4b;
+}
+
